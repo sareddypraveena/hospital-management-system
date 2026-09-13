@@ -1,7 +1,7 @@
 package com.org.HMS.service;
 
-import com.org.HMS.entity.User;
-import com.org.HMS.repository.UserRepository;
+import com.org.HMS.entity.Admin;
+import com.org.HMS.repository.AdminRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,24 +9,24 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final AdminRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(AdminRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     // Create User
-    public User createUser(User user) {
+    public Admin createUser(Admin user) {
         return userRepository.save(user);
     }
 
     // Get All Users
-    public List<User> getAllUsers() {
+    public List<Admin> getAllUsers() {
         return userRepository.findAll();
     }
 
     // Get User By ID
-    public User getUserById(Long id) {
+    public Admin getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
